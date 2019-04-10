@@ -21,10 +21,12 @@ export default {
   },
   methods: {
     copy(prompt) {
-      console.log("going to attempt and copy this yo");
-      window.navigator.clipboard.writeText(prompt.config).then(() => {
-        console.log("Copied!");
-      });
+      console.log("going to attempt to copy");
+      console.log(prompt.config);
+      document.execCommand("copy", prompt.config);
+      // window.navigator.clipboard.writeText(prompt.config).then(() => {
+      //   console.log("Copied!");
+      // });
     }
   },
   mounted() {
