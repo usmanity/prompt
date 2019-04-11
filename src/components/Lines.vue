@@ -1,17 +1,26 @@
 <template>
   <div class="lines">
-    Hello from lines
     <div class="examples">
       <div v-for="prompt in examples" v-bind:key="prompt.config" class="prompt">
-        Preview:
-        <code>{{ prompt.preview }}</code>
-        <button class="copy-to-clipboard" @click="copy(prompt)">Copy to clipboard</button>
+        <h2>{{ prompt.name }}</h2>
+        <div class="prompt-info">
+          <div class="preview-wrapper">
+            <span class="border-text">Preview</span>
+            <code class="preview">{{ prompt.preview }}</code>
+          </div>
+          <div class="config-wrapper">
+            <span class="border-text">Config</span>
+            <code class="config">{{ generatePrompt(prompt) }}</code>
+          </div>
+        </div>
+        <!-- <button class="copy-to-clipboard" @click="copy(prompt)">Copy to clipboard</button> -->
       </div>
     </div>
   </div>
 </template>
 <script>
 import simple from "@/prompts/simple";
+import emoji from "@/prompts/emoji";
 export default {
   name: "lines",
   data() {
@@ -27,17 +36,48 @@ export default {
       // window.navigator.clipboard.writeText(prompt.config).then(() => {
       //   console.log("Copied!");
       // });
+    },
+    generatePrompt(prompt) {
+      return `PS1="${prompt.config}"`;
     }
   },
   mounted() {
     console.log("Mounted lines component");
     this.examples.push(simple);
+    this.examples.push(emoji);
   }
 };
 </script>
-<style>
-.lines {
-  width: 960px;
-  margin: auto;
+<style lang="less">
+@light-gray: rgba(200, 200, 200, 0.8);
+@gray: rgba(150, 150, 150, 1);
+
+.prompt-info {
+  width: 100%;
+  display: flex;
 }
+.preview-wrapper,
+.config-wrapper {
+  width: 50%;
+  border: 1px solid @light-gray;
+  margin-right: 10px;
+  padding: 20px;
+  .border-text {
+    background-color: white;
+    position: absolute;
+    margin-top: -28px;
+    margin-left: -10px;
+    font-size: 12px;
+    padding: 0 6px;
+    color: @gray;
+  }
+}
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+// .preview {
+//   background-color: gray;
+//   color: white;
+// }
 </style>

@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <h1>
+      Choose options for your prompt and copy to your
+      <code>.bashrc</code> file
+    </h1>
     <Lines/>
   </div>
 </template>
@@ -23,5 +27,15 @@ html {
   html {
     font-family: "Inter var", sans-serif;
   }
+}
+#app {
+  width: 960px;
+  margin: auto;
+}
+h1 {
+  font-size: 24px;
+}
+code {
+  font-family: "SF Mono", monospace;
 }
 </style>

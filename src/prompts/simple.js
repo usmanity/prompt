@@ -1,4 +1,5 @@
 var simple = {
+  name: "simple",
   preview: ">",
   config: ">"
 };
