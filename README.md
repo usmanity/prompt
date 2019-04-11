@@ -1,29 +1,9 @@
 # prompt
 
-## Project setup
-```
-npm install
-```
+A quick way to get a bash/command line prompt.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## help out
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Try the prompts, file an issue if you run into anything.
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Submit your own. (I'll write up how to soon...)
