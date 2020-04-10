@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1>
-      Choose options for your prompt and copy to your
-      <code>.bashrc</code> file
+      To use,  copy to your
+      <code>.bashrc</code> file, open a new session in your terminal
     </h1>
     <Lines/>
   </div>
@@ -34,6 +34,7 @@ html {
 }
 h1 {
   font-size: 24px;
+  font-weight: 420;
 }
 code {
   font-family: "SF Mono", monospace;

@@ -1,7 +1,7 @@
 var emoji = {
-  name: "emoji example",
-  preview: "😁 →",
-  config: "😁 →"
+  name: "Use an emoji",
+  preview: "😁 → ",
+  config: "😁 → "
 };
 
 module.exports = emoji;

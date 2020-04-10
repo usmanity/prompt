@@ -3,6 +3,9 @@
     <div class="examples">
       <div v-for="prompt in examples" v-bind:key="prompt.config" class="prompt">
         <h2>{{ prompt.name }}</h2>
+        <div class="description" v-if=prompt.notes>
+          <strong>Notes: </strong>{{ prompt.notes }}
+        </div>
         <div class="prompt-info">
           <div class="preview-wrapper">
             <span class="border-text">Preview</span>
@@ -21,6 +24,8 @@
 <script>
 import simple from "@/prompts/simple";
 import emoji from "@/prompts/emoji";
+import directory from "@/prompts/directory";
+
 export default {
   name: "lines",
   data() {
@@ -42,9 +47,9 @@ export default {
     }
   },
   mounted() {
-    console.log("Mounted lines component");
     this.examples.push(simple);
     this.examples.push(emoji);
+    this.examples.push(directory);
   }
 };
 </script>
@@ -53,6 +58,7 @@ export default {
 @gray: rgba(150, 150, 150, 1);
 
 .prompt-info {
+  margin-bottom: 30px;
   width: 100%;
   display: flex;
 }
@@ -76,8 +82,9 @@ h2 {
   font-size: 18px;
   font-weight: 400;
 }
-// .preview {
-//   background-color: gray;
-//   color: white;
-// }
+.description {
+  margin-bottom: 20px;
+  font-size: 0.8em;
+}
 </style>
+
