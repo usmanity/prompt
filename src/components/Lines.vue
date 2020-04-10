@@ -3,7 +3,7 @@
     <div class="examples">
       <div v-for="prompt in examples" v-bind:key="prompt.config" class="prompt">
         <h2>{{ prompt.name }}</h2>
-        <div class="description" v-if=prompt.notes>
+        <div class="description" v-if="prompt.notes">
           <strong>Notes: </strong>{{ prompt.notes }}
         </div>
         <div class="prompt-info">
@@ -35,8 +35,8 @@ export default {
   },
   methods: {
     copy(prompt) {
-      console.log("going to attempt to copy");
-      console.log(prompt.config);
+      // console.log("going to attempt to copy");
+      // console.log(prompt.config);
       document.execCommand("copy", prompt.config);
       // window.navigator.clipboard.writeText(prompt.config).then(() => {
       //   console.log("Copied!");
@@ -87,4 +87,3 @@ h2 {
   font-size: 0.8em;
 }
 </style>
-
